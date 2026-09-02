@@ -1,0 +1,22 @@
+{
+  "name": "ambattur-classic-tailors",
+  "version": "1.0.0",
+  "description": "Ambattur Classic Tailors — Full-Stack Web Application (Express + SQLite/JSON + Vanilla JS/HTML5/CSS3)",
+  "scripts": {
+    "start": "node backend/server.js",
+    "server": "node backend/server.js",
+    "seed": "node backend/seed.js",
+    "postinstall": "cd backend && npm install"
+  },
+  "keywords": [
+    "tailoring-shop",
+    "ambattur",
+    "chennai",
+    "bespoke-tailoring",
+    "full-stack",
+    "express",
+    "sqlite"
+  ],
+  "author": "Ambattur Classic Tailors",
+  "license": "ISC"
+}

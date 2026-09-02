@@ -1,0 +1,29 @@
+{
+  "name": "ambattur-classic-tailors-backend",
+  "version": "1.0.0",
+  "description": "Express REST API backend for Ambattur Classic Tailors, Chennai",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "seed": "node seed.js"
+  },
+  "keywords": [
+    "tailoring",
+    "chennai",
+    "ambattur",
+    "express",
+    "rest-api",
+    "sqlite"
+  ],
+  "author": "Ambattur Classic Tailors",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2"
+  },
+  "optionalDependencies": {
+    "sqlite3": "^5.1.7"
+  }
+}

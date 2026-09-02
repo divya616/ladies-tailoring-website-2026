@@ -1,0 +1,476 @@
+/* ==========================================================================
+   AMBATTUR CLASSIC TAILORS — ADMIN DASHBOARD STYLESHEET
+   ========================================================================== */
+
+:root {
+  --admin-bg: #f8fafc;
+  --admin-card: #ffffff;
+  --admin-border: #e2e8f0;
+  --navy-dark: #0f172a;
+  --navy-light: #1e293b;
+  --emerald-main: #047857;
+  --gold-main: #d97706;
+}
+
+body.admin-body {
+  background-color: var(--admin-bg);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Admin Header Navigation */
+.admin-navbar {
+  background-color: var(--navy-dark);
+  color: #ffffff;
+  padding: 0.85rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid var(--gold-main);
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
+}
+
+.admin-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.admin-badge {
+  background-color: var(--gold-main);
+  color: var(--navy-dark);
+  font-weight: 800;
+  font-size: 0.75rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.admin-nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Main Layout */
+.admin-main {
+  flex-grow: 1;
+  padding: 2.25rem 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.admin-page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.admin-title-wrap h2 {
+  font-family: var(--font-heading);
+  font-size: 1.85rem;
+  color: var(--navy-dark);
+  font-weight: 700;
+}
+
+.admin-title-wrap p {
+  color: var(--text-muted);
+  font-size: 0.9375rem;
+}
+
+.admin-header-buttons {
+  display: flex;
+  gap: 0.75rem;
+}
+
+/* KPI Stat Cards Grid */
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.kpi-card {
+  background-color: var(--admin-card);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  border: 1px solid var(--admin-border);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: var(--transition);
+}
+
+.kpi-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.kpi-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.kpi-label {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.35rem;
+}
+
+.kpi-value {
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: var(--navy-dark);
+  line-height: 1;
+}
+
+.kpi-subtext {
+  font-size: 0.75rem;
+  color: var(--emerald-main);
+  font-weight: 600;
+  margin-top: 0.35rem;
+}
+
+.kpi-icon-box {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.kpi-icon-box svg {
+  width: 26px;
+  height: 26px;
+}
+
+.kpi-total .kpi-icon-box { background-color: #eff6ff; color: #2563eb; }
+.kpi-stitching .kpi-icon-box { background-color: #fffbeb; color: #d97706; }
+.kpi-ready .kpi-icon-box { background-color: #ecfdf5; color: #059669; }
+.kpi-revenue .kpi-icon-box { background-color: #fdf2f8; color: #db2777; }
+
+/* Filter & Action Toolbar */
+.admin-toolbar {
+  background-color: var(--admin-card);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.5rem;
+  border: 1px solid var(--admin-border);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.filter-pills-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.filter-pill {
+  background: none;
+  border: 1px solid var(--admin-border);
+  padding: 0.45rem 0.9rem;
+  border-radius: var(--radius-full);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--navy-dark);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.filter-pill:hover {
+  background-color: #f1f5f9;
+}
+
+.filter-pill.active {
+  background-color: var(--navy-dark);
+  color: #ffffff;
+  border-color: var(--navy-dark);
+}
+
+.search-input-wrap {
+  position: relative;
+  min-width: 280px;
+}
+
+.search-input-wrap input {
+  width: 100%;
+  padding: 0.55rem 1rem 0.55rem 2.25rem;
+  font-size: 0.875rem;
+  border: 1px solid var(--admin-border);
+  border-radius: var(--radius-sm);
+  background-color: #ffffff;
+}
+
+.search-input-wrap svg {
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  color: var(--text-light);
+}
+
+/* Orders Data Table */
+.table-card {
+  background-color: var(--admin-card);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--admin-border);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+.table-responsive {
+  overflow-x: auto;
+  width: 100%;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.875rem;
+}
+
+.admin-table th {
+  background-color: #f8fafc;
+  color: var(--navy-dark);
+  font-weight: 700;
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 1rem 1.25rem;
+  border-bottom: 2px solid var(--admin-border);
+}
+
+.admin-table td {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--admin-border);
+  vertical-align: middle;
+}
+
+.admin-table tbody tr:hover {
+  background-color: #f8fafc;
+}
+
+.tracking-pill {
+  font-family: monospace;
+  font-weight: 700;
+  color: var(--navy-dark);
+  background-color: #f1f5f9;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  border: 1px solid #cbd5e1;
+}
+
+.customer-cell {
+  display: flex;
+  flex-direction: column;
+}
+
+.cust-name {
+  font-weight: 700;
+  color: var(--navy-dark);
+}
+
+.cust-phone {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+}
+
+.action-btns-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--admin-border);
+  background-color: #ffffff;
+  color: var(--navy-dark);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-icon:hover {
+  background-color: var(--navy-dark);
+  color: #ffffff;
+}
+
+.btn-icon.wa-btn {
+  color: #16a34a;
+  border-color: #bbf7d0;
+}
+
+.btn-icon.wa-btn:hover {
+  background-color: #16a34a;
+  color: #ffffff;
+}
+
+/* Status Select Dropdown */
+.status-select {
+  padding: 0.35rem 0.65rem;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  border-radius: var(--radius-full);
+  border: 1.5px solid transparent;
+  cursor: pointer;
+  outline: none;
+  transition: var(--transition);
+}
+
+.status-select.sel-received {
+  background-color: #e0f2fe;
+  color: #0369a1;
+  border-color: #bae6fd;
+}
+
+.status-select.sel-stitching {
+  background-color: #fef3c7;
+  color: #b45309;
+  border-color: #fde68a;
+}
+
+.status-select.sel-ready {
+  background-color: #dcfce7;
+  color: #15803d;
+  border-color: #bbf7d0;
+}
+
+.status-select.sel-completed {
+  background-color: #f1f5f9;
+  color: #475569;
+  border-color: #e2e8f0;
+}
+
+.status-select.sel-cancelled {
+  background-color: #fee2e2;
+  color: #b91c1c;
+  border-color: #fecaca;
+}
+
+/* ==========================================================================
+   JOB SHEET / CUTTING SLIP MODAL & PRINT STYLES
+   ========================================================================== */
+.job-sheet-container {
+  background-color: #ffffff;
+  padding: 2rem;
+  border: 2px dashed #94a3b8;
+  border-radius: var(--radius-md);
+  margin-top: 1rem;
+}
+
+.job-sheet-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-bottom: 2px solid var(--navy-dark);
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.job-sheet-shop h3 {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  color: var(--navy-dark);
+  font-weight: 800;
+}
+
+.job-sheet-shop p {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+}
+
+.job-sheet-voucher {
+  text-align: right;
+}
+
+.job-sheet-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.job-sheet-box {
+  background-color: #f8fafc;
+  border: 1px solid var(--admin-border);
+  border-radius: var(--radius-sm);
+  padding: 0.85rem;
+}
+
+.job-sheet-box h4 {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-bottom: 0.35rem;
+}
+
+.job-sheet-box p {
+  font-weight: 700;
+  color: var(--navy-dark);
+}
+
+.job-sheet-notes {
+  background-color: #fffbeb;
+  border: 1px solid #fde68a;
+  border-radius: var(--radius-sm);
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.job-sheet-sign {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e2e8f0;
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+}
+
+/* Print Optimization */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  .job-sheet-container, .job-sheet-container * {
+    visibility: visible;
+  }
+  .job-sheet-container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    border: none;
+    padding: 0;
+  }
+  .no-print {
+    display: none !important;
+  }
+}
